@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23E89B8E1D1EABC600DA363B /* AWSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E89B8D1D1EABC600DA363B /* AWSConstants.swift */; };
-		7486623E92C73858C0A0F2F8 /* Pods_IoTSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A32F1D99230C34735307AD0 /* Pods_IoTSampleSwift.framework */; };
+		3D58D293A1EE2C4D6389A4C3 /* Pods_KnockKnock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */; };
 		A62CEE5B1BF3B50800E9C895 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CEE5A1BF3B50800E9C895 /* SubscribeViewController.swift */; };
 		A6B39BB51BF3A93600045F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B39BB41BF3A93600045F73 /* AppDelegate.swift */; };
 		A6B39BB71BF3A93600045F73 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B39BB61BF3A93600045F73 /* ConnectionViewController.swift */; };
@@ -21,14 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A32F1D99230C34735307AD0 /* Pods_IoTSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IoTSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B5FE74FD1FF3A98C28670F1 /* Pods-IoTSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoTSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IoTSampleSwift/Pods-IoTSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		13881B9E6CA53C8471317582 /* Pods-KnockKnock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnockKnock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnockKnock/Pods-KnockKnock.debug.xcconfig"; sourceTree = "<group>"; };
 		19CC868788E3FB2186476009 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		23E89B8D1D1EABC600DA363B /* AWSConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConstants.swift; sourceTree = "<group>"; };
 		3B90C03514D3F9F7EDF1FF45 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		91B555020565954B6F61098C /* Pods-IoTSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoTSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-IoTSampleSwift/Pods-IoTSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
+		8D4A2F970F55BD14D258643A /* Pods-KnockKnock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnockKnock.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnockKnock/Pods-KnockKnock.release.xcconfig"; sourceTree = "<group>"; };
 		A62CEE5A1BF3B50800E9C895 /* SubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
-		A6B39BB11BF3A93600045F73 /* IoTSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IoTSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6B39BB11BF3A93600045F73 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B39BB41BF3A93600045F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B39BB61BF3A93600045F73 /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 		A6B39BB81BF3A93600045F73 /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		A6B39BC21BF3A93600045F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = IoTSampleSwift/Info.plist; sourceTree = "<group>"; };
 		A6CC2A281BFFCB6F00635393 /* IoTSampleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IoTSampleTabBarController.swift; sourceTree = "<group>"; };
 		A6E263211C06870D0032B28D /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnockKnock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7486623E92C73858C0A0F2F8 /* Pods_IoTSampleSwift.framework in Frameworks */,
+				3D58D293A1EE2C4D6389A4C3 /* Pods_KnockKnock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 		A6B39BA81BF3A93600045F73 = {
 			isa = PBXGroup;
 			children = (
-				A6B39BB31BF3A93600045F73 /* IoTSampleSwift */,
+				A6B39BB31BF3A93600045F73 /* KnockKnock */,
 				A6B39BB21BF3A93600045F73 /* Products */,
 				DAE09B38C7A74FEC688B429A /* Pods */,
 				B4948BBFC248DCA3B8694222 /* Frameworks */,
@@ -74,12 +74,12 @@
 		A6B39BB21BF3A93600045F73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6B39BB11BF3A93600045F73 /* IoTSampleSwift.app */,
+				A6B39BB11BF3A93600045F73 /* KnockKnock.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6B39BB31BF3A93600045F73 /* IoTSampleSwift */ = {
+		A6B39BB31BF3A93600045F73 /* KnockKnock */ = {
 			isa = PBXGroup;
 			children = (
 				23E89B8D1D1EABC600DA363B /* AWSConstants.swift */,
@@ -94,13 +94,13 @@
 				A6B39BBF1BF3A93600045F73 /* LaunchScreen.storyboard */,
 				A62CEE591BF3AEA500E9C895 /* Supporting Files */,
 			);
-			path = IoTSampleSwift;
+			path = KnockKnock;
 			sourceTree = "<group>";
 		};
 		B4948BBFC248DCA3B8694222 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A32F1D99230C34735307AD0 /* Pods_IoTSampleSwift.framework */,
+				AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,8 +110,8 @@
 			children = (
 				3B90C03514D3F9F7EDF1FF45 /* Pods.debug.xcconfig */,
 				19CC868788E3FB2186476009 /* Pods.release.xcconfig */,
-				0B5FE74FD1FF3A98C28670F1 /* Pods-IoTSampleSwift.debug.xcconfig */,
-				91B555020565954B6F61098C /* Pods-IoTSampleSwift.release.xcconfig */,
+				13881B9E6CA53C8471317582 /* Pods-KnockKnock.debug.xcconfig */,
+				8D4A2F970F55BD14D258643A /* Pods-KnockKnock.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A6B39BB01BF3A93600045F73 /* IoTSampleSwift */ = {
+		A6B39BB01BF3A93600045F73 /* KnockKnock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6B39BC51BF3A93600045F73 /* Build configuration list for PBXNativeTarget "IoTSampleSwift" */;
+			buildConfigurationList = A6B39BC51BF3A93600045F73 /* Build configuration list for PBXNativeTarget "KnockKnock" */;
 			buildPhases = (
 				DC1F7059CF8DC38C8DFA1A4A /* [CP] Check Pods Manifest.lock */,
 				A6B39BAD1BF3A93600045F73 /* Sources */,
@@ -134,9 +134,9 @@
 			);
 			dependencies = (
 			);
-			name = IoTSampleSwift;
+			name = KnockKnock;
 			productName = IoTSampleSwift;
-			productReference = A6B39BB11BF3A93600045F73 /* IoTSampleSwift.app */;
+			productReference = A6B39BB11BF3A93600045F73 /* KnockKnock.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +153,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A6B39BAC1BF3A93600045F73 /* Build configuration list for PBXProject "IoTSampleSwift" */;
+			buildConfigurationList = A6B39BAC1BF3A93600045F73 /* Build configuration list for PBXProject "KnockKnock" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -166,7 +166,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6B39BB01BF3A93600045F73 /* IoTSampleSwift */,
+				A6B39BB01BF3A93600045F73 /* KnockKnock */,
 			);
 		};
 /* End PBXProject section */
@@ -197,7 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IoTSampleSwift/Pods-IoTSampleSwift-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnockKnock/Pods-KnockKnock-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		75F7F940938971BA0FD2C49C /* [CP] Copy Pods Resources */ = {
@@ -212,7 +212,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IoTSampleSwift/Pods-IoTSampleSwift-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnockKnock/Pods-KnockKnock-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC1F7059CF8DC38C8DFA1A4A /* [CP] Check Pods Manifest.lock */ = {
@@ -354,25 +354,25 @@
 		};
 		A6B39BC61BF3A93600045F73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B5FE74FD1FF3A98C28670F1 /* Pods-IoTSampleSwift.debug.xcconfig */;
+			baseConfigurationReference = 13881B9E6CA53C8471317582 /* Pods-KnockKnock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IoTSampleSwift/Info.plist;
+				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.IoTSampleSwift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
+				PRODUCT_NAME = KnockKnock;
 			};
 			name = Debug;
 		};
 		A6B39BC71BF3A93600045F73 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91B555020565954B6F61098C /* Pods-IoTSampleSwift.release.xcconfig */;
+			baseConfigurationReference = 8D4A2F970F55BD14D258643A /* Pods-KnockKnock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IoTSampleSwift/Info.plist;
+				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.IoTSampleSwift";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
+				PRODUCT_NAME = KnockKnock;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
@@ -380,7 +380,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6B39BAC1BF3A93600045F73 /* Build configuration list for PBXProject "IoTSampleSwift" */ = {
+		A6B39BAC1BF3A93600045F73 /* Build configuration list for PBXProject "KnockKnock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B39BC31BF3A93600045F73 /* Debug */,
@@ -389,7 +389,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6B39BC51BF3A93600045F73 /* Build configuration list for PBXNativeTarget "IoTSampleSwift" */ = {
+		A6B39BC51BF3A93600045F73 /* Build configuration list for PBXNativeTarget "KnockKnock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B39BC61BF3A93600045F73 /* Debug */,

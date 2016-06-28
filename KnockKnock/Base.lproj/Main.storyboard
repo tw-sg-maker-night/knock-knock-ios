@@ -9,7 +9,7 @@
         <!--Connection-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="ConnectionViewController" customModule="IoTSampleSwift" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="ConnectionViewController" customModule="KnockKnock" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -75,7 +75,7 @@
         <!--Publish-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="PublishViewController" customModule="IoTSampleSwift" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="PublishViewController" customModule="KnockKnock" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -116,7 +116,7 @@
         <!--Subscribe-->
         <scene sceneID="tzc-bh-gie">
             <objects>
-                <viewController id="Fip-3n-O2U" customClass="SubscribeViewController" customModule="IoTSampleSwift" sceneMemberID="viewController">
+                <viewController id="Fip-3n-O2U" customClass="SubscribeViewController" customModule="KnockKnock" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="421-SF-Sxa"/>
                         <viewControllerLayoutGuide type="bottom" id="c8O-zB-Exg"/>
@@ -154,7 +154,7 @@
         <!--IoT Sample Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="IoTSampleTabBarController" customModule="IoTSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="IoTSampleTabBarController" customModule="KnockKnock" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -175,7 +175,7 @@
         <!--Configuration-->
         <scene sceneID="VOk-Uk-Q6n">
             <objects>
-                <viewController id="rj6-NQ-FJh" customClass="ConfigurationViewController" customModule="IoTSampleSwift" sceneMemberID="viewController">
+                <viewController id="rj6-NQ-FJh" customClass="ConfigurationViewController" customModule="KnockKnock" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ESM-u5-PI2"/>
                         <viewControllerLayoutGuide type="bottom" id="snK-xi-sFC"/>

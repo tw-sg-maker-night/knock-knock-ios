@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:IoTSampleSwift.xcodeproj">
+      location = "group:/Users/niko/Desktop/Projects/knock-knock-ios/KnockKnock.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
