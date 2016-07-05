@@ -18,7 +18,7 @@ import AWSCore
 
 //WARNING: To run this sample correctly, you must set the following constants.
 let AwsRegion = AWSRegionType.USEast1 // e.g. AWSRegionType.USEast1
-let CognitoIdentityPoolId = ""
+let CognitoIdentityPoolId = "us-east-1:660c4e29-81e5-4f2c-8603-d830dcebd7e7"
 let CertificateSigningRequestCommonName = "KnockKnock"
 let CertificateSigningRequestCountryName = "Singapore"
 let CertificateSigningRequestOrganizationName = "Your Organization"

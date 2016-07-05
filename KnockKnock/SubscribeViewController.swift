@@ -29,9 +29,10 @@ class SubscribeViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         let iotDataManager = AWSIoTDataManager.defaultIoTDataManager()
-        let tabBarViewController = tabBarController as! IoTSampleTabBarController
+//        let tabBarViewController = tabBarController as! IoTSampleTabBarController
 
-        iotDataManager.subscribeToTopic(tabBarViewController.topic, qoS: .MessageDeliveryAttemptedAtMostOnce, messageCallback: {
+//        iotDataManager.subscribeToTopic(tabBarViewController.topic, qoS: .MessageDeliveryAttemptedAtMostOnce, messageCallback:
+        iotDataManager.subscribeToTopic("door", qoS: .MessageDeliveryAttemptedAtMostOnce, messageCallback:            {
             (payload) ->Void in
             let stringValue = NSString(data: payload, encoding: NSUTF8StringEncoding)!
 
@@ -44,8 +45,8 @@ class SubscribeViewController: UIViewController {
 
     override func viewWillDisappear(animated: Bool) {
         let iotDataManager = AWSIoTDataManager.defaultIoTDataManager()
-        let tabBarViewController = tabBarController as! IoTSampleTabBarController
-        iotDataManager.unsubscribeTopic(tabBarViewController.topic)
+//        let tabBarViewController = tabBarController as! IoTSampleTabBarController
+        iotDataManager.unsubscribeTopic("door")
     }
 
     override func didReceiveMemoryWarning() {

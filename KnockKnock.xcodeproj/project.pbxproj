@@ -11,13 +11,11 @@
 		3D58D293A1EE2C4D6389A4C3 /* Pods_KnockKnock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */; };
 		A62CEE5B1BF3B50800E9C895 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CEE5A1BF3B50800E9C895 /* SubscribeViewController.swift */; };
 		A6B39BB51BF3A93600045F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B39BB41BF3A93600045F73 /* AppDelegate.swift */; };
-		A6B39BB71BF3A93600045F73 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B39BB61BF3A93600045F73 /* ConnectionViewController.swift */; };
-		A6B39BB91BF3A93600045F73 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B39BB81BF3A93600045F73 /* PublishViewController.swift */; };
 		A6B39BBC1BF3A93600045F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B39BBA1BF3A93600045F73 /* Main.storyboard */; };
 		A6B39BBE1BF3A93600045F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B39BBD1BF3A93600045F73 /* Assets.xcassets */; };
 		A6B39BC11BF3A93600045F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B39BBF1BF3A93600045F73 /* LaunchScreen.storyboard */; };
-		A6CC2A291BFFCB6F00635393 /* IoTSampleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CC2A281BFFCB6F00635393 /* IoTSampleTabBarController.swift */; };
 		A6E263221C06870D0032B28D /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E263211C06870D0032B28D /* ConfigurationViewController.swift */; };
+		EF64B9A41D2BD9EE0079D31E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9A31D2BD9EE0079D31E /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,15 +27,13 @@
 		A62CEE5A1BF3B50800E9C895 /* SubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		A6B39BB11BF3A93600045F73 /* KnockKnock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B39BB41BF3A93600045F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6B39BB61BF3A93600045F73 /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
-		A6B39BB81BF3A93600045F73 /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		A6B39BBB1BF3A93600045F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6B39BBD1BF3A93600045F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6B39BC01BF3A93600045F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6B39BC21BF3A93600045F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = IoTSampleSwift/Info.plist; sourceTree = "<group>"; };
-		A6CC2A281BFFCB6F00635393 /* IoTSampleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IoTSampleTabBarController.swift; sourceTree = "<group>"; };
 		A6E263211C06870D0032B28D /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnockKnock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF64B9A31D2BD9EE0079D31E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +80,13 @@
 			children = (
 				23E89B8D1D1EABC600DA363B /* AWSConstants.swift */,
 				A6B39BB41BF3A93600045F73 /* AppDelegate.swift */,
-				A6CC2A281BFFCB6F00635393 /* IoTSampleTabBarController.swift */,
-				A6B39BB61BF3A93600045F73 /* ConnectionViewController.swift */,
-				A6B39BB81BF3A93600045F73 /* PublishViewController.swift */,
 				A6E263211C06870D0032B28D /* ConfigurationViewController.swift */,
 				A62CEE5A1BF3B50800E9C895 /* SubscribeViewController.swift */,
 				A6B39BBA1BF3A93600045F73 /* Main.storyboard */,
 				A6B39BBD1BF3A93600045F73 /* Assets.xcassets */,
 				A6B39BBF1BF3A93600045F73 /* LaunchScreen.storyboard */,
 				A62CEE591BF3AEA500E9C895 /* Supporting Files */,
+				EF64B9A31D2BD9EE0079D31E /* ViewController.swift */,
 			);
 			path = KnockKnock;
 			sourceTree = "<group>";
@@ -237,13 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B39BB91BF3A93600045F73 /* PublishViewController.swift in Sources */,
 				A62CEE5B1BF3B50800E9C895 /* SubscribeViewController.swift in Sources */,
 				A6B39BB51BF3A93600045F73 /* AppDelegate.swift in Sources */,
 				A6E263221C06870D0032B28D /* ConfigurationViewController.swift in Sources */,
 				23E89B8E1D1EABC600DA363B /* AWSConstants.swift in Sources */,
-				A6CC2A291BFFCB6F00635393 /* IoTSampleTabBarController.swift in Sources */,
-				A6B39BB71BF3A93600045F73 /* ConnectionViewController.swift in Sources */,
+				EF64B9A41D2BD9EE0079D31E /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

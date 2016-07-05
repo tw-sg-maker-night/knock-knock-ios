@@ -163,8 +163,8 @@ class ConfigurationViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(textField: UITextField) {
         topicTextField.text = textField.text
         let defaults = NSUserDefaults.standardUserDefaults()
-        let tabBarViewController = tabBarController as! IoTSampleTabBarController
-        tabBarViewController.topic=textField.text!
+//        let tabBarViewController = tabBarController as! IoTSampleTabBarController
+//        tabBarViewController.topic=textField.text!
         defaults.setObject(textField.text, forKey:"sliderTopic")
     }
     override func viewDidLoad() {
@@ -172,18 +172,18 @@ class ConfigurationViewController: UIViewController, UITextFieldDelegate {
         topicTextField.delegate = self
         let defaults = NSUserDefaults.standardUserDefaults()
         let certificateId = defaults.stringForKey( "certificateId")
-        let sliderTopic = defaults.stringForKey( "sliderTopic" )
-        let tabBarViewController = tabBarController as! IoTSampleTabBarController
+//        let sliderTopic = defaults.stringForKey( "sliderTopic" )
+//        let tabBarViewController = tabBarController as! IoTSampleTabBarController
 
         if (certificateId == nil)
         {
             deleteCertificateButton.hidden=true
         }
-        if (sliderTopic != nil)
-        {
-            tabBarViewController.topic=sliderTopic!
-        }
-        topicTextField.text = tabBarViewController.topic
+//        if (sliderTopic != nil)
+//        {
+//            tabBarViewController.topic=sliderTopic!
+//        }
+//        topicTextField.text = tabBarViewController.topic
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

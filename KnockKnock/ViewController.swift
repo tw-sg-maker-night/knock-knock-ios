@@ -1,42 +1,34 @@
-/*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+//
+//  ViewController.swift
+//  KnockKnock
+//
+//  Created by Col Harris on 05/07/2016.
+//  Copyright © 2016 Amazon. All rights reserved.
+//
 
 import UIKit
 import AWSIoT
 
-class ConnectionViewController: UIViewController, UITextViewDelegate {
-
+class ViewController: UIViewController {
+    
+    var mqttStatus: String = "Disconnected"
+    var topic: String = "door"
+ 
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var logTextView: UITextView!
-
+    @IBOutlet weak var openDoorButton: UIButton!
+    
     var connected = false;
-    var publishViewController : UIViewController!;
-    var subscribeViewController : UIViewController!;
-    var configurationViewController : UIViewController!;
-
+    
     var iotDataManager: AWSIoTDataManager!;
     var iotData: AWSIoTData!
     var iotManager: AWSIoTManager!;
     var iot: AWSIoT!
-
+    
     @IBAction func connectButtonPressed(sender: UIButton) {
-
-        let tabBarViewController = tabBarController as! IoTSampleTabBarController
-
+        
         sender.enabled = false
-
+        
         func mqttEventCallback( status: AWSIoTMQTTStatus )
         {
             dispatch_async( dispatch_get_main_queue()) {
@@ -44,13 +36,13 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
                 switch(status)
                 {
                 case .Connecting:
-                    tabBarViewController.mqttStatus = "Connecting..."
-                    print( tabBarViewController.mqttStatus )
-                    self.logTextView.text = tabBarViewController.mqttStatus
-
+                    self.mqttStatus = "Connecting..."
+                    print( self.mqttStatus )
+                    self.logTextView.text = self.mqttStatus
+                    
                 case .Connected:
-                    tabBarViewController.mqttStatus = "Connected"
-                    print( tabBarViewController.mqttStatus )
+                    self.mqttStatus = "Connected"
+                    print( self.mqttStatus )
                     sender.setTitle( "Disconnect", forState:.Normal)
                     self.activityIndicatorView.stopAnimating()
                     self.connected = true
@@ -58,55 +50,52 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
                     let uuid = NSUUID().UUIDString;
                     let defaults = NSUserDefaults.standardUserDefaults()
                     let certificateId = defaults.stringForKey( "certificateId")
-
+                    self.openDoorButton.enabled = true
                     self.logTextView.text = "Using certificate:\n\(certificateId!)\n\n\nClient ID:\n\(uuid)"
-
-                    tabBarViewController.viewControllers = [ self, self.publishViewController, self.subscribeViewController ]
-
-
+                    
                 case .Disconnected:
-                    tabBarViewController.mqttStatus = "Disconnected"
-                    print( tabBarViewController.mqttStatus )
+                    self.mqttStatus = "Disconnected"
+                    print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
                     self.logTextView.text = nil
-
+                    
                 case .ConnectionRefused:
-                    tabBarViewController.mqttStatus = "Connection Refused"
-                    print( tabBarViewController.mqttStatus )
+                    self.mqttStatus = "Connection Refused"
+                    print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = tabBarViewController.mqttStatus
-
+                    self.logTextView.text = self.mqttStatus
+                    
                 case .ConnectionError:
-                    tabBarViewController.mqttStatus = "Connection Error"
-                    print( tabBarViewController.mqttStatus )
+                    self.mqttStatus = "Connection Error"
+                    print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = tabBarViewController.mqttStatus
-
+                    self.logTextView.text = self.mqttStatus
+                    
                 case .ProtocolError:
-                    tabBarViewController.mqttStatus = "Protocol Error"
-                    print( tabBarViewController.mqttStatus )
+                    self.mqttStatus = "Protocol Error"
+                    print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = tabBarViewController.mqttStatus
-
+                    self.logTextView.text = self.mqttStatus
+                    
                 default:
-                    tabBarViewController.mqttStatus = "Unknown State"
+                    self.mqttStatus = "Unknown State"
                     print("unknown state: \(status.rawValue)")
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = tabBarViewController.mqttStatus
-
+                    self.logTextView.text = self.mqttStatus
+                    
                 }
                 NSNotificationCenter.defaultCenter().postNotificationName( "connectionStatusChanged", object: self )
             }
-
+            
         }
-
+        
         if (connected == false)
         {
             activityIndicatorView.startAnimating()
-
+            
             let defaults = NSUserDefaults.standardUserDefaults()
             var certificateId = defaults.stringForKey( "certificateId")
-
+            
             if (certificateId == nil)
             {
                 dispatch_async( dispatch_get_main_queue()) {
@@ -155,7 +144,7 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
                     // Now create and store the certificate ID in NSUserDefaults
                     //
                     let csrDictionary = [ "commonName":CertificateSigningRequestCommonName, "countryName":CertificateSigningRequestCountryName, "organizationName":CertificateSigningRequestOrganizationName, "organizationalUnitName":CertificateSigningRequestOrganizationalUnitName ]
-
+                    
                     self.iotManager.createKeysAndCertificateFromCsr(csrDictionary, callback: {  (response ) -> Void in
                         if (response != nil)
                         {
@@ -163,7 +152,7 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
                             defaults.setObject(response.certificateArn, forKey:"certificateArn")
                             certificateId = response.certificateId
                             print("response: [\(response)]")
-
+                            
                             let attachPrincipalPolicyRequest = AWSIoTAttachPrincipalPolicyRequest()
                             attachPrincipalPolicyRequest.policyName = PolicyName
                             attachPrincipalPolicyRequest.principal = response.certificateArn
@@ -206,7 +195,7 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
             else
             {
                 let uuid = NSUUID().UUIDString;
-
+                
                 //
                 // Connect to the AWS IoT service
                 //
@@ -217,7 +206,7 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
         {
             activityIndicatorView.startAnimating()
             logTextView.text = "Disconnecting..."
-
+            
             dispatch_async( dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0) ){
                 self.iotDataManager.disconnect();
                 dispatch_async( dispatch_get_main_queue() ) {
@@ -225,33 +214,25 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
                     self.connected = false
                     sender.setTitle( "Connect", forState:.Normal)
                     sender.enabled = true
-                    tabBarViewController.viewControllers = [ self, self.configurationViewController ]
                 }
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        let tabBarViewController = tabBarController as! IoTSampleTabBarController
-        publishViewController = tabBarViewController.viewControllers![1]
-        subscribeViewController = tabBarViewController.viewControllers![2]
-        configurationViewController = tabBarViewController.viewControllers![3]
-
-        tabBarViewController.viewControllers = [ self, configurationViewController ]
         logTextView.resignFirstResponder()
-
+        
         // Init IOT
         //
         // Set up Cognito
         //
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType: AwsRegion, identityPoolId: CognitoIdentityPoolId)
         let configuration = AWSServiceConfiguration(region: AwsRegion, credentialsProvider: credentialsProvider)
-
+        
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
-
+        
         iotManager = AWSIoTManager.defaultIoTManager()
         iot = AWSIoT.defaultIoT()
         
@@ -264,5 +245,27 @@ class ConnectionViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet weak var publishSlider: UISlider!
+    
+    @IBAction func openDoorClicked(sender: UIButton) {
+        print("openDoorClicked")
+        
+        let iotDataManager = AWSIoTDataManager.defaultIoTDataManager()
+        
+        //        iotDataManager.publishString("\(sender.value)", onTopic:tabBarViewController.topic, qoS:.MessageDeliveryAttemptedAtMostOnce)
+        var jsonData: NSData = NSData()
+        
+        let para:NSMutableDictionary = NSMutableDictionary()
+        para.setValue("open", forKey: "event")
+        
+        do {
+            jsonData = try NSJSONSerialization.dataWithJSONObject(para, options: NSJSONWritingOptions())
+        } catch _ {
+            
+        }
+        
+        iotDataManager.publishData(jsonData, onTopic:topic, qoS:.MessageDeliveryAttemptedAtMostOnce)
+    }
+    
 }
-
