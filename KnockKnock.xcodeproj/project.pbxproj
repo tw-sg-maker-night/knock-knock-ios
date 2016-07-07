@@ -16,7 +16,59 @@
 		A6B39BC11BF3A93600045F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B39BBF1BF3A93600045F73 /* LaunchScreen.storyboard */; };
 		A6E263221C06870D0032B28D /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E263211C06870D0032B28D /* ConfigurationViewController.swift */; };
 		EF64B9A41D2BD9EE0079D31E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9A31D2BD9EE0079D31E /* ViewController.swift */; };
+		EF64B9AB1D2BE3670079D31E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64B9A91D2BE3670079D31E /* Interface.storyboard */; };
+		EF64B9AD1D2BE3670079D31E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF64B9AC1D2BE3670079D31E /* Assets.xcassets */; };
+		EF64B9B41D2BE3670079D31E /* KnockKnockWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EF64B9B31D2BE3670079D31E /* KnockKnockWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EF64B9BB1D2BE3670079D31E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9BA1D2BE3670079D31E /* InterfaceController.swift */; };
+		EF64B9BD1D2BE3670079D31E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9BC1D2BE3670079D31E /* ExtensionDelegate.swift */; };
+		EF64B9BF1D2BE3670079D31E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9BE1D2BE3670079D31E /* NotificationController.swift */; };
+		EF64B9C11D2BE3670079D31E /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9C01D2BE3670079D31E /* GlanceController.swift */; };
+		EF64B9C31D2BE3670079D31E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9C21D2BE3670079D31E /* ComplicationController.swift */; };
+		EF64B9C51D2BE3670079D31E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF64B9C41D2BE3670079D31E /* Assets.xcassets */; };
+		EF64B9C91D2BE3670079D31E /* KnockKnockWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF64B9A71D2BE3670079D31E /* KnockKnockWatch.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF64B9B51D2BE3670079D31E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6B39BA91BF3A93600045F73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF64B9B21D2BE3670079D31E;
+			remoteInfo = "KnockKnockWatch Extension";
+		};
+		EF64B9C71D2BE3670079D31E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6B39BA91BF3A93600045F73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF64B9A61D2BE3670079D31E;
+			remoteInfo = KnockKnockWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EF64B9CD1D2BE3670079D31E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EF64B9B41D2BE3670079D31E /* KnockKnockWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF64B9D11D2BE3670079D31E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				EF64B9C91D2BE3670079D31E /* KnockKnockWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		13881B9E6CA53C8471317582 /* Pods-KnockKnock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnockKnock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnockKnock/Pods-KnockKnock.debug.xcconfig"; sourceTree = "<group>"; };
@@ -34,6 +86,19 @@
 		A6E263211C06870D0032B28D /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnockKnock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF64B9A31D2BD9EE0079D31E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF64B9A71D2BE3670079D31E /* KnockKnockWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnockWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF64B9AA1D2BE3670079D31E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		EF64B9AC1D2BE3670079D31E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF64B9AE1D2BE3670079D31E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF64B9B31D2BE3670079D31E /* KnockKnockWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "KnockKnockWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF64B9B91D2BE3670079D31E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		EF64B9BA1D2BE3670079D31E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		EF64B9BC1D2BE3670079D31E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		EF64B9BE1D2BE3670079D31E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		EF64B9C01D2BE3670079D31E /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		EF64B9C21D2BE3670079D31E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		EF64B9C41D2BE3670079D31E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF64B9C61D2BE3670079D31E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +107,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D58D293A1EE2C4D6389A4C3 /* Pods_KnockKnock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF64B9B01D2BE3670079D31E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				A6B39BB31BF3A93600045F73 /* KnockKnock */,
+				EF64B9A81D2BE3670079D31E /* KnockKnockWatch */,
+				EF64B9B71D2BE3670079D31E /* KnockKnockWatch Extension */,
 				A6B39BB21BF3A93600045F73 /* Products */,
 				DAE09B38C7A74FEC688B429A /* Pods */,
 				B4948BBFC248DCA3B8694222 /* Frameworks */,
@@ -71,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				A6B39BB11BF3A93600045F73 /* KnockKnock.app */,
+				EF64B9A71D2BE3670079D31E /* KnockKnockWatch.app */,
+				EF64B9B31D2BE3670079D31E /* KnockKnockWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +186,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EF64B9A81D2BE3670079D31E /* KnockKnockWatch */ = {
+			isa = PBXGroup;
+			children = (
+				EF64B9A91D2BE3670079D31E /* Interface.storyboard */,
+				EF64B9AC1D2BE3670079D31E /* Assets.xcassets */,
+				EF64B9AE1D2BE3670079D31E /* Info.plist */,
+			);
+			path = KnockKnockWatch;
+			sourceTree = "<group>";
+		};
+		EF64B9B71D2BE3670079D31E /* KnockKnockWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EF64B9BA1D2BE3670079D31E /* InterfaceController.swift */,
+				EF64B9BC1D2BE3670079D31E /* ExtensionDelegate.swift */,
+				EF64B9BE1D2BE3670079D31E /* NotificationController.swift */,
+				EF64B9C01D2BE3670079D31E /* GlanceController.swift */,
+				EF64B9C21D2BE3670079D31E /* ComplicationController.swift */,
+				EF64B9C41D2BE3670079D31E /* Assets.xcassets */,
+				EF64B9C61D2BE3670079D31E /* Info.plist */,
+				EF64B9B81D2BE3670079D31E /* Supporting Files */,
+			);
+			path = "KnockKnockWatch Extension";
+			sourceTree = "<group>";
+		};
+		EF64B9B81D2BE3670079D31E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF64B9B91D2BE3670079D31E /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,15 +232,51 @@
 				A6B39BAF1BF3A93600045F73 /* Resources */,
 				75F7F940938971BA0FD2C49C /* [CP] Copy Pods Resources */,
 				4D1E2401B957BD82886A4683 /* [CP] Embed Pods Frameworks */,
+				EF64B9D11D2BE3670079D31E /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EF64B9C81D2BE3670079D31E /* PBXTargetDependency */,
 			);
 			name = KnockKnock;
 			productName = IoTSampleSwift;
 			productReference = A6B39BB11BF3A93600045F73 /* KnockKnock.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EF64B9A61D2BE3670079D31E /* KnockKnockWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF64B9CE1D2BE3670079D31E /* Build configuration list for PBXNativeTarget "KnockKnockWatch" */;
+			buildPhases = (
+				EF64B9A51D2BE3670079D31E /* Resources */,
+				EF64B9CD1D2BE3670079D31E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF64B9B61D2BE3670079D31E /* PBXTargetDependency */,
+			);
+			name = KnockKnockWatch;
+			productName = KnockKnockWatch;
+			productReference = EF64B9A71D2BE3670079D31E /* KnockKnockWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		EF64B9B21D2BE3670079D31E /* KnockKnockWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF64B9CA1D2BE3670079D31E /* Build configuration list for PBXNativeTarget "KnockKnockWatch Extension" */;
+			buildPhases = (
+				EF64B9AF1D2BE3670079D31E /* Sources */,
+				EF64B9B01D2BE3670079D31E /* Frameworks */,
+				EF64B9B11D2BE3670079D31E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KnockKnockWatch Extension";
+			productName = "KnockKnockWatch Extension";
+			productReference = EF64B9B31D2BE3670079D31E /* KnockKnockWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -139,11 +284,19 @@
 		A6B39BA91BF3A93600045F73 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Amazon;
 				TargetAttributes = {
 					A6B39BB01BF3A93600045F73 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 9269KSNZG8;
+					};
+					EF64B9A61D2BE3670079D31E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					EF64B9B21D2BE3670079D31E = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -161,6 +314,8 @@
 			projectRoot = "";
 			targets = (
 				A6B39BB01BF3A93600045F73 /* KnockKnock */,
+				EF64B9A61D2BE3670079D31E /* KnockKnockWatch */,
+				EF64B9B21D2BE3670079D31E /* KnockKnockWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -173,6 +328,23 @@
 				A6B39BC11BF3A93600045F73 /* LaunchScreen.storyboard in Resources */,
 				A6B39BBE1BF3A93600045F73 /* Assets.xcassets in Resources */,
 				A6B39BBC1BF3A93600045F73 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF64B9A51D2BE3670079D31E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF64B9AD1D2BE3670079D31E /* Assets.xcassets in Resources */,
+				EF64B9AB1D2BE3670079D31E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF64B9B11D2BE3670079D31E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF64B9C51D2BE3670079D31E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +411,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF64B9AF1D2BE3670079D31E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF64B9BF1D2BE3670079D31E /* NotificationController.swift in Sources */,
+				EF64B9BD1D2BE3670079D31E /* ExtensionDelegate.swift in Sources */,
+				EF64B9C31D2BE3670079D31E /* ComplicationController.swift in Sources */,
+				EF64B9BB1D2BE3670079D31E /* InterfaceController.swift in Sources */,
+				EF64B9C11D2BE3670079D31E /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF64B9B61D2BE3670079D31E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF64B9B21D2BE3670079D31E /* KnockKnockWatch Extension */;
+			targetProxy = EF64B9B51D2BE3670079D31E /* PBXContainerItemProxy */;
+		};
+		EF64B9C81D2BE3670079D31E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF64B9A61D2BE3670079D31E /* KnockKnockWatch */;
+			targetProxy = EF64B9C71D2BE3670079D31E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A6B39BBA1BF3A93600045F73 /* Main.storyboard */ = {
@@ -256,6 +453,14 @@
 				A6B39BC01BF3A93600045F73 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EF64B9A91D2BE3670079D31E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF64B9AA1D2BE3670079D31E /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -349,10 +554,13 @@
 			baseConfigurationReference = 13881B9E6CA53C8471317582 /* Pods-KnockKnock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
 				PRODUCT_NAME = KnockKnock;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -361,11 +569,80 @@
 			baseConfigurationReference = 8D4A2F970F55BD14D258643A /* Pods-KnockKnock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
 				PRODUCT_NAME = KnockKnock;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		EF64B9CB1D2BE3670079D31E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "KnockKnockWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		EF64B9CC1D2BE3670079D31E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "KnockKnockWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		EF64B9CF1D2BE3670079D31E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = KnockKnockWatch_Extension;
+				INFOPLIST_FILE = KnockKnockWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		EF64B9D01D2BE3670079D31E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = KnockKnockWatch_Extension;
+				INFOPLIST_FILE = KnockKnockWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -389,6 +666,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EF64B9CA1D2BE3670079D31E /* Build configuration list for PBXNativeTarget "KnockKnockWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF64B9CB1D2BE3670079D31E /* Debug */,
+				EF64B9CC1D2BE3670079D31E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF64B9CE1D2BE3670079D31E /* Build configuration list for PBXNativeTarget "KnockKnockWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF64B9CF1D2BE3670079D31E /* Debug */,
+				EF64B9D01D2BE3670079D31E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

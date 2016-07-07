@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var topic: String = "door"
  
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var logTextView: UITextView!
+    @IBOutlet weak var logTextView: UITextView?
     @IBOutlet weak var openDoorButton: UIButton!
     
     var connected = false;
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                 case .Connecting:
                     self.mqttStatus = "Connecting..."
                     print( self.mqttStatus )
-                    self.logTextView.text = self.mqttStatus
+                    self.logTextView?.text = self.mqttStatus
                     
                 case .Connected:
                     self.mqttStatus = "Connected"
@@ -51,37 +51,37 @@ class ViewController: UIViewController {
                     let defaults = NSUserDefaults.standardUserDefaults()
                     let certificateId = defaults.stringForKey( "certificateId")
                     self.openDoorButton.enabled = true
-                    self.logTextView.text = "Using certificate:\n\(certificateId!)\n\n\nClient ID:\n\(uuid)"
+                    self.logTextView?.text = "Using certificate:\n\(certificateId!)\n\n\nClient ID:\n\(uuid)"
                     
                 case .Disconnected:
                     self.mqttStatus = "Disconnected"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = nil
+                    self.logTextView?.text = nil
                     
                 case .ConnectionRefused:
                     self.mqttStatus = "Connection Refused"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = self.mqttStatus
+                    self.logTextView?.text = self.mqttStatus
                     
                 case .ConnectionError:
                     self.mqttStatus = "Connection Error"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = self.mqttStatus
+                    self.logTextView?.text = self.mqttStatus
                     
                 case .ProtocolError:
                     self.mqttStatus = "Protocol Error"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = self.mqttStatus
+                    self.logTextView?.text = self.mqttStatus
                     
                 default:
                     self.mqttStatus = "Unknown State"
                     print("unknown state: \(status.rawValue)")
                     self.activityIndicatorView.stopAnimating()
-                    self.logTextView.text = self.mqttStatus
+                    self.logTextView?.text = self.mqttStatus
                     
                 }
                 NSNotificationCenter.defaultCenter().postNotificationName( "connectionStatusChanged", object: self )
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
             if (certificateId == nil)
             {
                 dispatch_async( dispatch_get_main_queue()) {
-                    self.logTextView.text = "No identity available, searching bundle..."
+                    self.logTextView?.text = "No identity available, searching bundle..."
                 }
                 //
                 // No certificate ID has been stored in the user defaults; check to see if any .p12 files
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
                     //
                     if let data = NSData(contentsOfFile:myImages[0]) {
                         dispatch_async( dispatch_get_main_queue()) {
-                            self.logTextView.text = "found identity \(myImages[0]), importing..."
+                            self.logTextView?.text = "found identity \(myImages[0]), importing..."
                         }
                         if AWSIoTManager.importIdentityFromPKCS12Data( data, passPhrase:"", certificateId:myImages[0]) {
                             //
@@ -129,7 +129,7 @@ class ViewController: UIViewController {
                             defaults.setObject(myImages[0], forKey:"certificateId")
                             defaults.setObject("from-bundle", forKey:"certificateArn")
                             dispatch_async( dispatch_get_main_queue()) {
-                                self.logTextView.text = "Using certificate: \(myImages[0]))"
+                                self.logTextView?.text = "Using certificate: \(myImages[0]))"
                                 self.iotDataManager.connectWithClientId( uuid, cleanSession:true, certificateId:myImages[0], statusCallback: mqttEventCallback)
                             }
                         }
@@ -138,7 +138,7 @@ class ViewController: UIViewController {
                 certificateId = defaults.stringForKey( "certificateId")
                 if (certificateId == nil) {
                     dispatch_async( dispatch_get_main_queue()) {
-                        self.logTextView.text = "No identity found in bundle, creating one..."
+                        self.logTextView?.text = "No identity found in bundle, creating one..."
                     }
                     //
                     // Now create and store the certificate ID in NSUserDefaults
@@ -174,7 +174,7 @@ class ViewController: UIViewController {
                                 {
                                     let delayTime = dispatch_time( DISPATCH_TIME_NOW, Int64(2*Double(NSEC_PER_SEC)))
                                     dispatch_after( delayTime, dispatch_get_main_queue()) {
-                                        self.logTextView.text = "Using certificate: \(certificateId!)"
+                                        self.logTextView?.text = "Using certificate: \(certificateId!)"
                                         self.iotDataManager.connectWithClientId( uuid, cleanSession:true, certificateId:certificateId, statusCallback: mqttEventCallback)
                                     }
                                 }
@@ -186,7 +186,7 @@ class ViewController: UIViewController {
                             dispatch_async( dispatch_get_main_queue()) {
                                 sender.enabled = true
                                 self.activityIndicatorView.stopAnimating()
-                                self.logTextView.text = "Unable to create keys and/or certificate, check values in Constants.swift"
+                                self.logTextView?.text = "Unable to create keys and/or certificate, check values in Constants.swift"
                             }
                         }
                     } )
@@ -205,7 +205,7 @@ class ViewController: UIViewController {
         else
         {
             activityIndicatorView.startAnimating()
-            logTextView.text = "Disconnecting..."
+            logTextView?.text = "Disconnecting..."
             
             dispatch_async( dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0) ){
                 self.iotDataManager.disconnect();
@@ -222,7 +222,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        logTextView.resignFirstResponder()
+        logTextView?.resignFirstResponder()
         
         // Init IOT
         //
