@@ -1,0 +1,2 @@
+github "col/aws-sdk-ios" "master"
+#git "file:///Users/Col/Projects/aws-sdk-ios" "master"

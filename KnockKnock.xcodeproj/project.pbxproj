@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		23E89B8E1D1EABC600DA363B /* AWSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E89B8D1D1EABC600DA363B /* AWSConstants.swift */; };
-		3D58D293A1EE2C4D6389A4C3 /* Pods_KnockKnock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */; };
 		A62CEE5B1BF3B50800E9C895 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CEE5A1BF3B50800E9C895 /* SubscribeViewController.swift */; };
 		A6B39BB51BF3A93600045F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B39BB41BF3A93600045F73 /* AppDelegate.swift */; };
 		A6B39BBC1BF3A93600045F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B39BBA1BF3A93600045F73 /* Main.storyboard */; };
 		A6B39BBE1BF3A93600045F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B39BBD1BF3A93600045F73 /* Assets.xcassets */; };
 		A6B39BC11BF3A93600045F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B39BBF1BF3A93600045F73 /* LaunchScreen.storyboard */; };
 		A6E263221C06870D0032B28D /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E263211C06870D0032B28D /* ConfigurationViewController.swift */; };
+		EF523F611D491A3B008C3B08 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF523F5F1D491A3B008C3B08 /* AWSCore.framework */; };
+		EF523F621D491A3B008C3B08 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF523F5F1D491A3B008C3B08 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EF523F631D491A3B008C3B08 /* AWSIoT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF523F601D491A3B008C3B08 /* AWSIoT.framework */; };
+		EF523F641D491A3B008C3B08 /* AWSIoT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF523F601D491A3B008C3B08 /* AWSIoT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF64B9A41D2BD9EE0079D31E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64B9A31D2BD9EE0079D31E /* ViewController.swift */; };
 		EF64B9AB1D2BE3670079D31E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64B9A91D2BE3670079D31E /* Interface.storyboard */; };
 		EF64B9AD1D2BE3670079D31E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF64B9AC1D2BE3670079D31E /* Assets.xcassets */; };
@@ -46,6 +49,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		EF523F651D491A3B008C3B08 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EF523F621D491A3B008C3B08 /* AWSCore.framework in Embed Frameworks */,
+				EF523F641D491A3B008C3B08 /* AWSIoT.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF64B9CD1D2BE3670079D31E /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,7 +99,8 @@
 		A6B39BC01BF3A93600045F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6B39BC21BF3A93600045F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = IoTSampleSwift/Info.plist; sourceTree = "<group>"; };
 		A6E263211C06870D0032B28D /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
-		AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnockKnock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF523F5F1D491A3B008C3B08 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
+		EF523F601D491A3B008C3B08 /* AWSIoT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSIoT.framework; path = Carthage/Build/iOS/AWSIoT.framework; sourceTree = "<group>"; };
 		EF64B9A31D2BD9EE0079D31E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF64B9A71D2BE3670079D31E /* KnockKnockWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockKnockWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF64B9AA1D2BE3670079D31E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -102,11 +118,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		03A6E896092FE2AC3BA798FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6B39BAE1BF3A93600045F73 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D58D293A1EE2C4D6389A4C3 /* Pods_KnockKnock.framework in Frameworks */,
+				EF523F611D491A3B008C3B08 /* AWSCore.framework in Frameworks */,
+				EF523F631D491A3B008C3B08 /* AWSIoT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +194,8 @@
 		B4948BBFC248DCA3B8694222 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AFC2B18B4B7472FFBEAB8BAB /* Pods_KnockKnock.framework */,
+				EF523F5F1D491A3B008C3B08 /* AWSCore.framework */,
+				EF523F601D491A3B008C3B08 /* AWSIoT.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,13 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6B39BC51BF3A93600045F73 /* Build configuration list for PBXNativeTarget "KnockKnock" */;
 			buildPhases = (
-				DC1F7059CF8DC38C8DFA1A4A /* [CP] Check Pods Manifest.lock */,
 				A6B39BAD1BF3A93600045F73 /* Sources */,
 				A6B39BAE1BF3A93600045F73 /* Frameworks */,
 				A6B39BAF1BF3A93600045F73 /* Resources */,
-				75F7F940938971BA0FD2C49C /* [CP] Copy Pods Resources */,
-				4D1E2401B957BD82886A4683 /* [CP] Embed Pods Frameworks */,
 				EF64B9D11D2BE3670079D31E /* Embed Watch Content */,
+				EF523F651D491A3B008C3B08 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +273,7 @@
 			buildPhases = (
 				EF64B9A51D2BE3670079D31E /* Resources */,
 				EF64B9CD1D2BE3670079D31E /* Embed App Extensions */,
+				03A6E896092FE2AC3BA798FA /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,7 +314,6 @@
 				TargetAttributes = {
 					A6B39BB01BF3A93600045F73 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 9269KSNZG8;
 					};
 					EF64B9A61D2BE3670079D31E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -349,54 +372,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4D1E2401B957BD82886A4683 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnockKnock/Pods-KnockKnock-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		75F7F940938971BA0FD2C49C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnockKnock/Pods-KnockKnock-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC1F7059CF8DC38C8DFA1A4A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6B39BAD1BF3A93600045F73 /* Sources */ = {
@@ -556,6 +531,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"TARGET_OS_IOS=1",
+				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
@@ -571,6 +554,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"TARGET_OS_IOS=1",
+				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
@@ -674,6 +665,7 @@
 				EF64B9CC1D2BE3670079D31E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF64B9CE1D2BE3670079D31E /* Build configuration list for PBXNativeTarget "KnockKnockWatch" */ = {
 			isa = XCConfigurationList;
@@ -682,6 +674,7 @@
 				EF64B9D01D2BE3670079D31E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
