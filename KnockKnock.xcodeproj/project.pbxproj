@@ -314,12 +314,18 @@
 				TargetAttributes = {
 					A6B39BB01BF3A93600045F73 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 9269KSNZG8;
+						LastSwiftMigration = 0810;
 					};
 					EF64B9A61D2BE3670079D31E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9269KSNZG8;
+						LastSwiftMigration = 0810;
 					};
 					EF64B9B21D2BE3670079D31E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9269KSNZG8;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -531,6 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9269KSNZG8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -541,9 +548,10 @@
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.KnockKnock;
 				PRODUCT_NAME = KnockKnock;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -554,6 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9269KSNZG8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -564,10 +573,11 @@
 				);
 				INFOPLIST_FILE = KnockKnock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.KnockKnock;
 				PRODUCT_NAME = KnockKnock;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -576,12 +586,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = 9269KSNZG8;
 				INFOPLIST_FILE = "KnockKnockWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.KnockKnock.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -592,12 +604,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = 9269KSNZG8;
 				INFOPLIST_FILE = "KnockKnockWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.KnockKnock.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -608,13 +622,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = 9269KSNZG8;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = KnockKnockWatch_Extension;
 				INFOPLIST_FILE = KnockKnockWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.KnockKnock.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -625,13 +641,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = 9269KSNZG8;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = KnockKnockWatch_Extension;
 				INFOPLIST_FILE = KnockKnockWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "Amazon-Web-Services.KnockKnock.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.KnockKnock.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};

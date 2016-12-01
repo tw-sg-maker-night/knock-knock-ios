@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>Amazon-Web-Services.KnockKnock</string>
+	<string>com.colharris.KnockKnock</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

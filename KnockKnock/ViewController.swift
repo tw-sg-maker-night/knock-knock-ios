@@ -25,53 +25,53 @@ class ViewController: UIViewController {
     var iotManager: AWSIoTManager!;
     var iot: AWSIoT!
     
-    @IBAction func connectButtonPressed(sender: UIButton) {
+    @IBAction func connectButtonPressed(_ sender: UIButton) {
         
-        sender.enabled = false
+        sender.isEnabled = false
         
-        func mqttEventCallback( status: AWSIoTMQTTStatus )
+        func mqttEventCallback( _ status: AWSIoTMQTTStatus )
         {
-            dispatch_async( dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 print("connection status = \(status.rawValue)")
                 switch(status)
                 {
-                case .Connecting:
+                case .connecting:
                     self.mqttStatus = "Connecting..."
                     print( self.mqttStatus )
                     self.logTextView?.text = self.mqttStatus
                     
-                case .Connected:
+                case .connected:
                     self.mqttStatus = "Connected"
                     print( self.mqttStatus )
-                    sender.setTitle( "Disconnect", forState:.Normal)
+                    sender.setTitle( "Disconnect", for:UIControlState())
                     self.activityIndicatorView.stopAnimating()
                     self.connected = true
-                    sender.enabled = true
-                    let uuid = NSUUID().UUIDString;
-                    let defaults = NSUserDefaults.standardUserDefaults()
-                    let certificateId = defaults.stringForKey( "certificateId")
-                    self.openDoorButton.enabled = true
+                    sender.isEnabled = true
+                    let uuid = UUID().uuidString;
+                    let defaults = UserDefaults.standard
+                    let certificateId = defaults.string( forKey: "certificateId")
+                    self.openDoorButton.isEnabled = true
                     self.logTextView?.text = "Using certificate:\n\(certificateId!)\n\n\nClient ID:\n\(uuid)"
                     
-                case .Disconnected:
+                case .disconnected:
                     self.mqttStatus = "Disconnected"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
                     self.logTextView?.text = nil
                     
-                case .ConnectionRefused:
+                case .connectionRefused:
                     self.mqttStatus = "Connection Refused"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
                     self.logTextView?.text = self.mqttStatus
                     
-                case .ConnectionError:
+                case .connectionError:
                     self.mqttStatus = "Connection Error"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
                     self.logTextView?.text = self.mqttStatus
                     
-                case .ProtocolError:
+                case .protocolError:
                     self.mqttStatus = "Protocol Error"
                     print( self.mqttStatus )
                     self.activityIndicatorView.stopAnimating()
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
                     self.logTextView?.text = self.mqttStatus
                     
                 }
-                NSNotificationCenter.defaultCenter().postNotificationName( "connectionStatusChanged", object: self )
+                NotificationCenter.default.post( name: Notification.Name(rawValue: "connectionStatusChanged"), object: self )
             }
             
         }
@@ -93,21 +93,21 @@ class ViewController: UIViewController {
         {
             activityIndicatorView.startAnimating()
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            var certificateId = defaults.stringForKey( "certificateId")
+            let defaults = UserDefaults.standard
+            var certificateId = defaults.string( forKey: "certificateId")
             
             if (certificateId == nil)
             {
-                dispatch_async( dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.logTextView?.text = "No identity available, searching bundle..."
                 }
                 //
                 // No certificate ID has been stored in the user defaults; check to see if any .p12 files
                 // exist in the bundle.
                 //
-                let myBundle = NSBundle.mainBundle()
-                let myImages = myBundle.pathsForResourcesOfType("p12" as String, inDirectory:nil)
-                let uuid = NSUUID().UUIDString;
+                let myBundle = Bundle.main
+                let myImages = myBundle.paths(forResourcesOfType: "p12" as String, inDirectory:nil)
+                let uuid = UUID().uuidString;
                 
                 if (myImages.count > 0) {
                     //
@@ -117,27 +117,27 @@ class ViewController: UIViewController {
                     // you'll need to provide that here; this code is written to expect that the
                     // PKCS12 file will not have a passphrase.
                     //
-                    if let data = NSData(contentsOfFile:myImages[0]) {
-                        dispatch_async( dispatch_get_main_queue()) {
+                    if let data = try? Data(contentsOf: URL(fileURLWithPath: myImages[0])) {
+                        DispatchQueue.main.async {
                             self.logTextView?.text = "found identity \(myImages[0]), importing..."
                         }
-                        if AWSIoTManager.importIdentityFromPKCS12Data( data, passPhrase:"", certificateId:myImages[0]) {
+                        if AWSIoTManager.importIdentity( fromPKCS12Data: data, passPhrase:"", certificateId:myImages[0]) {
                             //
                             // Set the certificate ID and ARN values to indicate that we have imported
                             // our identity from the PKCS12 file in the bundle.
                             //
-                            defaults.setObject(myImages[0], forKey:"certificateId")
-                            defaults.setObject("from-bundle", forKey:"certificateArn")
-                            dispatch_async( dispatch_get_main_queue()) {
+                            defaults.set(myImages[0], forKey:"certificateId")
+                            defaults.set("from-bundle", forKey:"certificateArn")
+                            DispatchQueue.main.async {
                                 self.logTextView?.text = "Using certificate: \(myImages[0]))"
-                                self.iotDataManager.connectWithClientId( uuid, cleanSession:true, certificateId:myImages[0], statusCallback: mqttEventCallback)
+                                self.iotDataManager.connect( withClientId: uuid, cleanSession:true, certificateId:myImages[0], statusCallback: mqttEventCallback)
                             }
                         }
                     }
                 }
-                certificateId = defaults.stringForKey( "certificateId")
+                certificateId = defaults.string( forKey: "certificateId")
                 if (certificateId == nil) {
-                    dispatch_async( dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.logTextView?.text = "No identity found in bundle, creating one..."
                     }
                     //
@@ -145,21 +145,21 @@ class ViewController: UIViewController {
                     //
                     let csrDictionary = [ "commonName":CertificateSigningRequestCommonName, "countryName":CertificateSigningRequestCountryName, "organizationName":CertificateSigningRequestOrganizationName, "organizationalUnitName":CertificateSigningRequestOrganizationalUnitName ]
                     
-                    self.iotManager.createKeysAndCertificateFromCsr(csrDictionary, callback: {  (response ) -> Void in
+                    self.iotManager.createKeysAndCertificate(fromCsr: csrDictionary, callback: {  (response ) -> Void in
                         if (response != nil)
                         {
-                            defaults.setObject(response.certificateId, forKey:"certificateId")
-                            defaults.setObject(response.certificateArn, forKey:"certificateArn")
-                            certificateId = response.certificateId
+                            defaults.set(response?.certificateId, forKey:"certificateId")
+                            defaults.set(response?.certificateArn, forKey:"certificateArn")
+                            certificateId = response?.certificateId
                             print("response: [\(response)]")
                             
                             let attachPrincipalPolicyRequest = AWSIoTAttachPrincipalPolicyRequest()
-                            attachPrincipalPolicyRequest.policyName = PolicyName
-                            attachPrincipalPolicyRequest.principal = response.certificateArn
+                            attachPrincipalPolicyRequest?.policyName = PolicyName
+                            attachPrincipalPolicyRequest?.principal = response?.certificateArn
                             //
                             // Attach the policy to the certificate
                             //
-                            self.iot.attachPrincipalPolicy(attachPrincipalPolicyRequest).continueWithBlock { (task) -> AnyObject? in
+                            self.iot.attachPrincipalPolicy(attachPrincipalPolicyRequest!).continue(successBlock: { (task) -> AnyObject? in
                                 if let error = task.error {
                                     print("failed: [\(error)]")
                                 }
@@ -172,19 +172,19 @@ class ViewController: UIViewController {
                                 //
                                 if (task.exception == nil && task.error == nil)
                                 {
-                                    let delayTime = dispatch_time( DISPATCH_TIME_NOW, Int64(2*Double(NSEC_PER_SEC)))
-                                    dispatch_after( delayTime, dispatch_get_main_queue()) {
+                                    let delayTime = DispatchTime.now() + Double(Int64(2*Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                                    DispatchQueue.main.asyncAfter( deadline: delayTime) {
                                         self.logTextView?.text = "Using certificate: \(certificateId!)"
-                                        self.iotDataManager.connectWithClientId( uuid, cleanSession:true, certificateId:certificateId, statusCallback: mqttEventCallback)
+                                        self.iotDataManager.connect( withClientId: uuid, cleanSession:true, certificateId:certificateId, statusCallback: mqttEventCallback)
                                     }
                                 }
                                 return nil
-                            }
+                            })
                         }
                         else
                         {
-                            dispatch_async( dispatch_get_main_queue()) {
-                                sender.enabled = true
+                            DispatchQueue.main.async {
+                                sender.isEnabled = true
                                 self.activityIndicatorView.stopAnimating()
                                 self.logTextView?.text = "Unable to create keys and/or certificate, check values in Constants.swift"
                             }
@@ -194,12 +194,12 @@ class ViewController: UIViewController {
             }
             else
             {
-                let uuid = NSUUID().UUIDString;
+                let uuid = UUID().uuidString;
                 
                 //
                 // Connect to the AWS IoT service
                 //
-                iotDataManager.connectWithClientId( uuid, cleanSession:true, certificateId:certificateId, statusCallback: mqttEventCallback)
+                iotDataManager.connect( withClientId: uuid, cleanSession:true, certificateId:certificateId, statusCallback: mqttEventCallback)
             }
         }
         else
@@ -207,13 +207,13 @@ class ViewController: UIViewController {
             activityIndicatorView.startAnimating()
             logTextView?.text = "Disconnecting..."
             
-            dispatch_async( dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0) ){
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async{
                 self.iotDataManager.disconnect();
-                dispatch_async( dispatch_get_main_queue() ) {
+                DispatchQueue.main.async {
                     self.activityIndicatorView.stopAnimating()
                     self.connected = false
-                    sender.setTitle( "Connect", forState:.Normal)
-                    sender.enabled = true
+                    sender.setTitle( "Connect", for:UIControlState())
+                    sender.isEnabled = true
                 }
             }
         }
@@ -231,13 +231,13 @@ class ViewController: UIViewController {
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType: AwsRegion, identityPoolId: CognitoIdentityPoolId)
         let configuration = AWSServiceConfiguration(region: AwsRegion, credentialsProvider: credentialsProvider)
         
-        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
         
-        iotManager = AWSIoTManager.defaultIoTManager()
-        iot = AWSIoT.defaultIoT()
+        iotManager = AWSIoTManager.default()
+        iot = AWSIoT.default()
         
-        iotDataManager = AWSIoTDataManager.defaultIoTDataManager()
-        iotData = AWSIoTData.defaultIoTData()
+        iotDataManager = AWSIoTDataManager.default()
+        iotData = AWSIoTData.default()
         
     }
     
@@ -248,24 +248,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var publishSlider: UISlider!
     
-    @IBAction func openDoorClicked(sender: UIButton) {
+    @IBAction func openDoorClicked(_ sender: UIButton) {
         print("openDoorClicked")
         
-        let iotDataManager = AWSIoTDataManager.defaultIoTDataManager()
+        let iotDataManager = AWSIoTDataManager.default()
         
         //        iotDataManager.publishString("\(sender.value)", onTopic:tabBarViewController.topic, qoS:.MessageDeliveryAttemptedAtMostOnce)
-        var jsonData: NSData = NSData()
+        var jsonData: Data = Data()
         
         let para:NSMutableDictionary = NSMutableDictionary()
         para.setValue("open", forKey: "event")
         
         do {
-            jsonData = try NSJSONSerialization.dataWithJSONObject(para, options: NSJSONWritingOptions())
+            jsonData = try JSONSerialization.data(withJSONObject: para, options: JSONSerialization.WritingOptions())
         } catch _ {
             
         }
         
-        iotDataManager.publishData(jsonData, onTopic:topic, qoS:.MessageDeliveryAttemptedAtMostOnce)
+        iotDataManager?.publishData(jsonData, onTopic:topic, qoS:.messageDeliveryAttemptedAtMostOnce)
     }
     
 }
